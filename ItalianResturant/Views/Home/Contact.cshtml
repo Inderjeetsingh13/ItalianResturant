@@ -1,0 +1,79 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+
+
+
+<!-- map -->
+<div class="map">
+    <ul class="faq">
+        <li class="item1">
+            <a href="#">Interactive Route Map<span class="glyphicon glyphicon-menu-down"></span></a>
+            <ul>
+                <li class="subitem1">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d408598.8546541236!2d174.5852784679175!3d-36.862144773394114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d0d47fb5a9ce6fb%3A0x500ef6143a29917!2sAuckland%2C%20New%20Zealand!5e0!3m2!1sen!2sin!4v1576042816060!5m2!1sen!2sin"></iframe>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <!-- script for tabs -->
+    <script type="text/javascript">
+			$(function() {
+
+				var menu_ul = $('.faq > li > ul'),
+					   menu_a  = $('.faq > li > a');
+
+				menu_ul.hide();
+
+				menu_a.click(function(e) {
+					e.preventDefault();
+					if(!$(this).hasClass('active')) {
+						menu_a.removeClass('active');
+						menu_ul.filter(':visible').slideUp('normal');
+						$(this).addClass('active').next().stop(true,true).slideDown('normal');
+					} else {
+						$(this).removeClass('active');
+						$(this).next().stop(true,true).slideUp('normal');
+					}
+				});
+
+			});
+    </script>
+    <!-- script for tabs -->
+</div>
+<!-- //map -->
+<!-- mail -->
+<div class="mail" id="mail">
+    <div class="container">
+        <h3>Beanery <span>Mail Us</span></h3>
+        <div class="w3agile_mail_grids">
+            <form action="MailPass" method="POST">
+                <div class="col-md-6 w3agile_mail_grid">
+
+                    <input id="Name" name="Name" type="text" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="" />
+
+                    <input id="Email" name="Email" type="Email" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="" />
+
+
+
+                </div>
+                <div class="col-md-6 w3agile_mail_grid">
+
+                    <input id="Phone" name="Phone" type="text" value="Phone" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Phone';}" required="" />
+
+                    <input id="Subject" name="Subject" type="text" value="Subject" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Subject';}" required="" />
+
+
+
+                </div>
+
+                <textarea id="Message" name="Message" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message...';}" required="" rows="2" cols="20"></textarea>
+                
+                <input type="submit" value="Send Query"/>
+
+
+            </form>
+        </div>
+    </div>
+</div>
+<!-- //mail -->

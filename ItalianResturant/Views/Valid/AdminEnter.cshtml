@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewBag.Title = "AdminEnter";
+}
+
+
+
+
+<!-- map -->
+<div class="map">
+  
+    <!-- script for tabs -->
+    <script type="text/javascript">
+			$(function() {
+
+				var menu_ul = $('.faq > li > ul'),
+					   menu_a  = $('.faq > li > a');
+
+				menu_ul.hide();
+
+				menu_a.click(function(e) {
+					e.preventDefault();
+					if(!$(this).hasClass('active')) {
+						menu_a.removeClass('active');
+						menu_ul.filter(':visible').slideUp('normal');
+						$(this).addClass('active').next().stop(true,true).slideDown('normal');
+					} else {
+						$(this).removeClass('active');
+						$(this).next().stop(true,true).slideUp('normal');
+					}
+				});
+
+			});
+    </script>
+    <!-- script for tabs -->
+</div>
+<!-- //map -->
+<!-- mail -->
+<div class="mail" id="mail">
+    <div class="container">
+        <h3>Beanery <span>Mail Us</span></h3>
+        <div class="w3agile_mail_grids">
+            <form action="AdminPass" method="POST">
+                <div class="col-md-12 w3agile_mail_grid">
+
+                    <input id="Name" name="Name" type="text" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="" />
+
+                    <input id="Password" name="Password" type="text" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="" />
+
+
+
+                </div>
+              
+
+              
+                <input type="submit" value="Send Query" />
+
+
+            </form>
+        </div>
+    </div>
+</div>
+<!-- //mail -->
